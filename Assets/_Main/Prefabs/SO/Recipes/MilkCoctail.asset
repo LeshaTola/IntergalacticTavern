@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e301288f59ac0243a36a31dedcb367e, type: 3}
+  m_Name: MilkCoctail
+  m_EditorClassIdentifier: 
+  <Sprite>k__BackingField: {fileID: 5124529604418445855, guid: 63380c9e235af9d41b53049b685d326d, type: 3}
+  <Name>k__BackingField: "\"\u041C\u043E\u043B\u043E\u0447\u043D\u044B\u0435 \u043E\u0433\u0443\u0440\u0447\u0438\u043A\u0438\""
+  <Score>k__BackingField: 100
+  <Ingredients>k__BackingField:
+  - Ingredient: {fileID: 11400000, guid: 520e121fca8244d48961f0fbeb4c90f8, type: 2}
+    Count: 1
+  - Ingredient: {fileID: 11400000, guid: 33b6fae18886dea478998c477f0b6dad, type: 2}
+    Count: 5
