@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: CarOil
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: -4281347025684168676, guid: 07f468c44bbc3674f94273d1fabab651, type: 3}
-  <Name>k__BackingField: "\u041C\u0430\u0448\u0438\u043D\u043D\u043E\u0435 \u043C\u0430\u0441\u043B\u043E"
+  <Name>k__BackingField: "\u041C\u0430\u0441\u043B\u043E"
+  <Cost>k__BackingField: 300

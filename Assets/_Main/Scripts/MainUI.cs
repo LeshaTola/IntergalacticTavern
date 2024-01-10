@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class MainUI : MonoBehaviour
 {
 	[SerializeField] private Button shopButton;
+	[SerializeField] private ShopUI shopUI;
 	[SerializeField] private TextMeshProUGUI orderScoreText;
 	[SerializeField] private OrderManager orderManager;
 
@@ -12,7 +13,7 @@ public class MainUI : MonoBehaviour
 	{
 		shopButton.onClick.AddListener(() =>
 		{
-			Debug.Log("Магазин");
+			shopUI.Show();
 		});
 	}
 
