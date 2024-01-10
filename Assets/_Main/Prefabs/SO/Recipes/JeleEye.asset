@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e301288f59ac0243a36a31dedcb367e, type: 3}
   m_Name: JeleEye
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: -1576867849512884538, guid: 63380c9e235af9d41b53049b685d326d, type: 3}
+  <Sprite>k__BackingField: {fileID: -7510846454770743432, guid: 63380c9e235af9d41b53049b685d326d, type: 3}
+  <Client>k__BackingField: {fileID: -3416984461518409879, guid: a902d4660280d0e419ab5fc5fd327143, type: 3}
   <Name>k__BackingField: "\"\u0412\u0441\u0435\u0432\u0438\u0434\u0435\u0448\u0435\u0435
     \u043E\u043A\u043E\""
   <Score>k__BackingField: 1000
+  <Time>k__BackingField: 120
   <Ingredients>k__BackingField:
   - Ingredient: {fileID: 11400000, guid: 425b742365372794d99314fabff3fa45, type: 2}
     Count: 5

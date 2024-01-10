@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: LimonEye
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: -463855379530985493, guid: 63380c9e235af9d41b53049b685d326d, type: 3}
+  <Client>k__BackingField: {fileID: 2038635741924658250, guid: a902d4660280d0e419ab5fc5fd327143, type: 3}
   <Name>k__BackingField: "\"\u0411\u043E\u0436\u044C\u044F \u0440\u043E\u0441\u0430\""
   <Score>k__BackingField: 100
+  <Time>k__BackingField: 120
   <Ingredients>k__BackingField:
   - Ingredient: {fileID: 11400000, guid: 425b742365372794d99314fabff3fa45, type: 2}
     Count: 2

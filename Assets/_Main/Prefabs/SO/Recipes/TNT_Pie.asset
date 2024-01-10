@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: TNT_Pie
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: 1533661774434794429, guid: 63380c9e235af9d41b53049b685d326d, type: 3}
+  <Client>k__BackingField: {fileID: 2038635741924658250, guid: a902d4660280d0e419ab5fc5fd327143, type: 3}
   <Name>k__BackingField: "\u041F\u0440\u0438\u043E\u0433 \"\u0411\u043E\u043C\u0431\u0430
     \u0447\u0435\u0441\u0442\u043D\u043E \u0433\u043E\u0432\u043E\u0440\u044F\""
   <Score>k__BackingField: 100
+  <Time>k__BackingField: 120
   <Ingredients>k__BackingField:
   - Ingredient: {fileID: 11400000, guid: 5eca6a5078d8e0b4cb67469e856b3225, type: 2}
     Count: 1

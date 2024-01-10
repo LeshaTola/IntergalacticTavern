@@ -23,7 +23,7 @@ public class Inventory : MonoBehaviour
 			Slots.Add(new IngredientsWithCount()
 			{
 				Ingredient = ingredient,
-				Count = 0
+				Count = 100
 			});
 		}
 	}
@@ -44,6 +44,11 @@ public class Inventory : MonoBehaviour
 
 		Slots[FindIngredientIndex(ingredient)].Count -= count;
 		OnInventoryChanged?.Invoke();
+	}
+
+	public bool IsEnough(IngredientSO ingredient, int count = 1)
+	{
+		return Slots[FindIngredientIndex(ingredient)].Count >= count;
 	}
 
 	private int FindIngredientIndex(IngredientSO ingredient)

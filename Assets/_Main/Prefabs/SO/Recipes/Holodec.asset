@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Holodec
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: -1841993859774619003, guid: 63380c9e235af9d41b53049b685d326d, type: 3}
+  <Client>k__BackingField: {fileID: -3416984461518409879, guid: a902d4660280d0e419ab5fc5fd327143, type: 3}
   <Name>k__BackingField: "\u0425\u043E\u043B\u043E\u0434\u0435\u0446 \"\u041F\u0430\u043B\u044C\u0447\u0438\u043A\u0438
     \u043E\u0431\u043B\u0438\u0436\u0435\u0448\u044C\""
   <Score>k__BackingField: 0
+  <Time>k__BackingField: 120
   <Ingredients>k__BackingField:
   - Ingredient: {fileID: 11400000, guid: b2a3d1eec9eba374a992485e36af1dad, type: 2}
     Count: 1
