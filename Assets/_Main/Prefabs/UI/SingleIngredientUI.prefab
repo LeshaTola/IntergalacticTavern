@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2114392906686044509}
+  - component: {fileID: 4798603221250941837}
   m_Layer: 5
   m_Name: SingleIngredientUI
   m_TagString: Untagged
@@ -39,6 +40,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4798603221250941837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5155517042080226334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3c0eaf5d661564499da9c11e2b53f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: {fileID: 4444812002852488333}
+  image: {fileID: 7467681144367990245}
 --- !u!1 &5534425171996737859
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +218,7 @@ GameObject:
   - component: {fileID: 6018559849910186395}
   - component: {fileID: 4444812002852488333}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CountText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
