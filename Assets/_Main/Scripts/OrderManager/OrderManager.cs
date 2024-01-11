@@ -44,6 +44,7 @@ public class OrderManager : MonoBehaviour, IUseSaves
 		}
 
 		NextOrder();
+		YandexGame.NewLeaderboardScores("BestScore", Score);
 		saveSystem.Save();
 	}
 
@@ -57,6 +58,7 @@ public class OrderManager : MonoBehaviour, IUseSaves
 		OnScoreChanged?.Invoke(Score);
 
 		NextOrder();
+		YandexGame.NewLeaderboardScores("BestScore", Score);
 		saveSystem.Save();
 	}
 
