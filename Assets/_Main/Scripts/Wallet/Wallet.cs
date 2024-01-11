@@ -38,6 +38,7 @@ public class Wallet : MonoBehaviour, IUseSaves
 
 	public void LoadData()
 	{
-		AddMoney(YandexGame.savesData.Money);
+		Money = YandexGame.savesData.Money;
+		OnMoneyChanged?.Invoke();
 	}
 }

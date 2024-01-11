@@ -9,7 +9,7 @@ public class WalletUI : MonoBehaviour
 	private void Start()
 	{
 		wallet.OnMoneyChanged += OnMoneyChanged;
-		UpdateUI(0);
+		UpdateUI(wallet.Money);
 	}
 
 	private void OnDestroy()

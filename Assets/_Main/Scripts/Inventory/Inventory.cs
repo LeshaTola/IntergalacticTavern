@@ -75,9 +75,9 @@ public class Inventory : MonoBehaviour, IUseSaves
 	{
 		var listOfCounts = YandexGame.savesData.IngredientCount;
 
+		CreateInventory();
 		if (listOfCounts == null || listOfCounts.Count <= 0)
 		{
-			CreateInventory();
 			return;
 		}
 

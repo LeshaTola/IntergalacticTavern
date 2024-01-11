@@ -1,6 +1,44 @@
 {
-    "idSave": 20,
+    "idSave": 42,
     "isFirstSession": false,
     "language": "ru",
-    "promptDone": false
+    "promptDone": false,
+    "Money": 126,
+    "Score": 60,
+    "IngredientCount": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "OrdersIndexesList": [
+        9,
+        5,
+        8,
+        2,
+        11,
+        6,
+        13,
+        10,
+        0,
+        7,
+        14,
+        4,
+        3,
+        1,
+        12
+    ],
+    "OrderIndex": 7,
+    "OrderTimer": 165.02163696289063
 }

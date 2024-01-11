@@ -17,11 +17,9 @@ public class MainUI : MonoBehaviour
 		});
 	}
 
-	private void Start()
+	private void OnEnable()
 	{
 		orderManager.OnScoreChanged += OnScoreChanged;
-
-		UpdateUI(0);
 	}
 
 	private void OnDestroy()

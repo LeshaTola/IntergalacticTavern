@@ -13,13 +13,13 @@ namespace YG
 		public bool promptDone;
 
 		// Ваши сохранения
-		public int Money { get; set; }
-		public int Score { get; set; }
+		public int Money;
+		public int Score;
 
-		public List<int> IngredientCount { get; set; }
+		public List<int> IngredientCount;
 
-		public List<int> OrdersIndexesList { get; set; }
-		public int OrderIndex { get; set; }
-		public float OrderTimer { get; set; }
+		public List<int> OrdersIndexesList;
+		public int OrderIndex;
+		public float OrderTimer;
 	}
 }
