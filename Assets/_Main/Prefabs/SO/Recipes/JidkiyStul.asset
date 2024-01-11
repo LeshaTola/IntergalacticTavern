@@ -15,7 +15,7 @@ MonoBehaviour:
   <Sprite>k__BackingField: {fileID: -5261525456457296330, guid: 63380c9e235af9d41b53049b685d326d, type: 3}
   <Client>k__BackingField: {fileID: -4098394329414978669, guid: a902d4660280d0e419ab5fc5fd327143, type: 3}
   <Name>k__BackingField: "\"\u0416\u0438\u0434\u043A\u0438\u0439 \u0441\u0442\u0443\u043B\""
-  <Score>k__BackingField: 100
+  <Score>k__BackingField: 120
   <Time>k__BackingField: 120
   <Ingredients>k__BackingField:
   - Ingredient: {fileID: 11400000, guid: 2bac11a03e844604a823bdee78d32ada, type: 2}

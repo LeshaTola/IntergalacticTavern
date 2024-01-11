@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: -8904411006684599594, guid: 07f468c44bbc3674f94273d1fabab651, type: 3}
   <Name>k__BackingField: "\u041E\u0433\u0443\u0440\u0435\u0446"
+  <Cost>k__BackingField: 20

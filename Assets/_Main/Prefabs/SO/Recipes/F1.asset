@@ -17,7 +17,7 @@ MonoBehaviour:
   <Name>k__BackingField: "\"\u0420\u0430\u0437\u0440\u044B\u0432\u043D\u0430\u044F
     F1\""
   <Score>k__BackingField: 100
-  <Time>k__BackingField: 120
+  <Time>k__BackingField: 100
   <Ingredients>k__BackingField:
   - Ingredient: {fileID: 11400000, guid: 5e3b7bd78c7142446916e7f11b9309d5, type: 2}
     Count: 1

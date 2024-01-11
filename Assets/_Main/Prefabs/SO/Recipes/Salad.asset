@@ -16,8 +16,8 @@ MonoBehaviour:
   <Client>k__BackingField: {fileID: -4098394329414978669, guid: a902d4660280d0e419ab5fc5fd327143, type: 3}
   <Name>k__BackingField: "\u0421\u0430\u043B\u0430\u0442 \"\u041D\u0430\u0448\u043B\u0438
     \u0432 \u043A\u0430\u043F\u0443\u0441\u0442\u0435\""
-  <Score>k__BackingField: 100
-  <Time>k__BackingField: 120
+  <Score>k__BackingField: 200
+  <Time>k__BackingField: 200
   <Ingredients>k__BackingField:
   - Ingredient: {fileID: 11400000, guid: 21cdc41f2b36b6e478b24942b6fb02d5, type: 2}
     Count: 2
