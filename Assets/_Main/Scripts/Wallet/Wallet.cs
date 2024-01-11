@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
+using YG;
 
-public class Wallet : MonoBehaviour
+public class Wallet : MonoBehaviour, IUseSaves
 {
 
 	public event Action OnMoneyChanged;
@@ -28,5 +29,15 @@ public class Wallet : MonoBehaviour
 
 		Money -= count;
 		OnMoneyChanged?.Invoke();
+	}
+
+	public void SaveData()
+	{
+		YandexGame.savesData.Money = Money;
+	}
+
+	public void LoadData()
+	{
+		AddMoney(YandexGame.savesData.Money);
 	}
 }

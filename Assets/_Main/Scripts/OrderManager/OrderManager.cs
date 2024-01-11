@@ -2,27 +2,26 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using YG;
 
-public class OrderManager : MonoBehaviour
+public class OrderManager : MonoBehaviour, IUseSaves
 {
 	public event Action<float> OnTimerChanged;
 	public event Action<RecipeSO> OnOrderChanged;
 	public event Action<int> OnScoreChanged;
 
-	[SerializeField] private List<RecipeSO> recipes;
 	[SerializeField] private Inventory inventory;
+	[SerializeField] private SaveSystem saveSystem;
 
 	private List<RecipeSO> ordersList;
 	private float orderTimer;
-	private int score;
 
 	private int currentOrderIndex;
 	public RecipeSO CurrentOrder { get; private set; }
+	public int Score { get; private set; }
 
-	private void Start()
-	{
-		ResetOrders();
-	}
+	[field: SerializeField] public RecipeListSO RecipeList { get; private set; }
+
 
 	private void Update()
 	{
@@ -36,8 +35,8 @@ public class OrderManager : MonoBehaviour
 			return;
 		}
 
-		score += CurrentOrder.Score;
-		OnScoreChanged?.Invoke(score);
+		Score += CurrentOrder.Score;
+		OnScoreChanged?.Invoke(Score);
 
 		foreach (var ingredientWithCount in CurrentOrder.Ingredients)
 		{
@@ -45,11 +44,20 @@ public class OrderManager : MonoBehaviour
 		}
 
 		NextOrder();
+		saveSystem.Save();
 	}
 
 	public void RejectOrder()
 	{
+		Score -= CurrentOrder.Score / 2;
+		if (Score < 0)
+		{
+			Score = 0;
+		}
+		OnScoreChanged?.Invoke(Score);
+
 		NextOrder();
+		saveSystem.Save();
 	}
 
 	private bool CheckAbilityToApply()
@@ -99,7 +107,7 @@ public class OrderManager : MonoBehaviour
 
 	private void ResetOrders()
 	{
-		ordersList = Shuffle(recipes);
+		ordersList = Shuffle(RecipeList.List);
 		SetOrder(0);
 	}
 
@@ -120,4 +128,55 @@ public class OrderManager : MonoBehaviour
 		return newList;
 	}
 
+	private List<int> GetListOfOrdersIndexes(List<RecipeSO> orders)
+	{
+		var ordersIndexes = new List<int>();
+
+		foreach (var order in orders)
+		{
+			ordersIndexes.Add(RecipeList.List.IndexOf(order));
+		}
+
+		return ordersIndexes;
+	}
+
+	private List<RecipeSO> GetListOfOrdersFromIndexes(List<int> ordersIndexes)
+	{
+		var orders = new List<RecipeSO>();
+
+		foreach (var index in ordersIndexes)
+		{
+			orders.Add(RecipeList.List[index]);
+		}
+
+		return orders;
+	}
+
+	public void SaveData()
+	{
+		YandexGame.savesData.Score = Score;
+		YandexGame.savesData.OrdersIndexesList = GetListOfOrdersIndexes(ordersList);
+		YandexGame.savesData.OrderTimer = orderTimer;
+		YandexGame.savesData.OrderIndex = currentOrderIndex;
+	}
+
+	public void LoadData()
+	{
+		Score = YandexGame.savesData.Score;
+		OnScoreChanged?.Invoke(Score);
+
+		var ordersIndexesList = YandexGame.savesData.OrdersIndexesList;
+		if (ordersIndexesList == null || ordersIndexesList.Count <= 0)
+		{
+			ResetOrders();
+			return;
+		}
+
+		ordersList = GetListOfOrdersFromIndexes(ordersIndexesList);
+		SetOrder(YandexGame.savesData.OrderIndex);
+
+		orderTimer = YandexGame.savesData.OrderTimer;
+		OnTimerChanged?.Invoke(orderTimer);
+
+	}
 }

@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using YG;
 
-public class Inventory : MonoBehaviour
+public class Inventory : MonoBehaviour, IUseSaves
 {
 	public event Action OnInventoryChanged;
 
@@ -12,7 +14,7 @@ public class Inventory : MonoBehaviour
 
 	private void Awake()
 	{
-		CreateInventory();
+		//CreateInventory();
 	}
 
 	private void CreateInventory()
@@ -23,7 +25,7 @@ public class Inventory : MonoBehaviour
 			Slots.Add(new IngredientsWithCount()
 			{
 				Ingredient = ingredient,
-				Count = 100
+				Count = 0
 			});
 		}
 	}
@@ -62,5 +64,28 @@ public class Inventory : MonoBehaviour
 		}
 
 		return -1;
+	}
+
+	public void SaveData()
+	{
+		YandexGame.savesData.IngredientCount = Slots.Select(s => s.Count).ToList();
+	}
+
+	public void LoadData()
+	{
+		var listOfCounts = YandexGame.savesData.IngredientCount;
+
+		if (listOfCounts == null || listOfCounts.Count <= 0)
+		{
+			CreateInventory();
+			return;
+		}
+
+		for (int i = 0; i < listOfCounts.Count; i++)
+		{
+			Slots[i].Count = listOfCounts[i];
+		}
+
+		OnInventoryChanged?.Invoke();
 	}
 }
