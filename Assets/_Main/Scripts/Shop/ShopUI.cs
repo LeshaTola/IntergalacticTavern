@@ -1,15 +1,19 @@
+using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
 {
+	public event Action OnBuy;
+
 	[SerializeField] private Inventory inventory;
 	[SerializeField] private Wallet wallet;
 
 	[SerializeField] private IngredientListSO ingredients;
-	[SerializeField] private Transform buttonsContainer;
-	[SerializeField] private SingleBuyButtonUI buttonUITemplate;
+	[SerializeField] private List<SingleBuyButtonUI> buttons;
+
 
 	[SerializeField] private Button exitButton;
 	[SerializeField] private TextMeshProUGUI moneyText;
@@ -27,7 +31,7 @@ public class ShopUI : MonoBehaviour
 	private void Start()
 	{
 		wallet.OnMoneyChanged += OnMoneyChanged;
-
+		updateUI(wallet.Money);
 		Hide();
 	}
 
@@ -48,21 +52,19 @@ public class ShopUI : MonoBehaviour
 
 	private void SetupUI()
 	{
-		foreach (var ingredient in ingredients.List)
+		for (int i = 0; i < ingredients.List.Count; i++)
 		{
-			var newButton = Instantiate(buttonUITemplate, buttonsContainer);
+			var ingredient = ingredients.List[i];
 
-			newButton.UpdateUI(ingredient);
-
-			newButton.SetBuyButtonAction(() =>
+			buttons[i].SetBuyButtonAction(() =>
 			{
 				if (wallet.Money >= ingredient.Cost)
 				{
 					wallet.DenyMoney(ingredient.Cost);
 					inventory.AddIngredient(ingredient);
+					OnBuy?.Invoke();
 				}
 			});
-
 		}
 	}
 

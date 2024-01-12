@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Coin : MonoBehaviour
 {
+	public event Action OnCoinClicked;
+
 	[SerializeField] private Wallet wallet;
 	[SerializeField] private int coinsForClick;
 
@@ -15,6 +18,7 @@ public class Coin : MonoBehaviour
 		{
 			wallet.AddMoney(coinsForClick);
 			textPool.Get();
+			OnCoinClicked?.Invoke();
 		});
 
 		textPool = new(
