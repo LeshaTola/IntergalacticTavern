@@ -7,7 +7,7 @@ public class Coin : MonoBehaviour
 	public event Action OnCoinClicked;
 
 	[SerializeField] private Wallet wallet;
-	[SerializeField] private int coinsForClick;
+	[field: SerializeField] public int CoinsForClick { get; private set; } = 1;
 
 	[SerializeField] private FlyingCoinText coinTemplate;
 	private ObjectPool<FlyingCoinText> textPool;
@@ -16,7 +16,7 @@ public class Coin : MonoBehaviour
 	{
 		GetComponent<Button>().onClick.AddListener(() =>
 		{
-			wallet.AddMoney(coinsForClick);
+			wallet.AddMoney(CoinsForClick);
 			textPool.Get();
 			OnCoinClicked?.Invoke();
 		});
@@ -31,7 +31,7 @@ public class Coin : MonoBehaviour
 			{
 				coinText.transform.position = transform.position;
 
-				coinText.UpdateText(coinsForClick);
+				coinText.UpdateText(CoinsForClick);
 				coinText.Show();
 				coinText.Shot();
 
@@ -48,5 +48,10 @@ public class Coin : MonoBehaviour
 			},
 			10
 			);
+	}
+
+	public void MultiplyCoinForClick(int multiplyValue)
+	{
+		CoinsForClick = CoinsForClick * multiplyValue;
 	}
 }

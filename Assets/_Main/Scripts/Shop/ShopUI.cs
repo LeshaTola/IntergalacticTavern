@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class ShopUI : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class ShopUI : MonoBehaviour
 
 
 	[SerializeField] private Button exitButton;
+	[SerializeField] private Button x2PerClickButton;
+	[SerializeField] private Button x2CurrentMoneyButton;
 	[SerializeField] private TextMeshProUGUI moneyText;
 
 	private void Awake()
@@ -23,6 +26,16 @@ public class ShopUI : MonoBehaviour
 		exitButton.onClick.AddListener(() =>
 		{
 			Hide();
+		});
+
+		x2PerClickButton.onClick.AddListener(() =>
+		{
+			YandexGame.RewVideoShow((int)RewardId.X2PerClick);
+		});
+
+		x2CurrentMoneyButton.onClick.AddListener(() =>
+		{
+			YandexGame.RewVideoShow((int)RewardId.X2CurrentMoney);
 		});
 
 		SetupUI();
