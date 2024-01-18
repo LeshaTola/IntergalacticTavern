@@ -1,8 +1,9 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
-public class Coin : MonoBehaviour
+public class Coin : MonoBehaviour, IUseSaves
 {
 	public event Action OnCoinClicked;
 
@@ -53,5 +54,15 @@ public class Coin : MonoBehaviour
 	public void MultiplyCoinForClick(int multiplyValue)
 	{
 		CoinsForClick = CoinsForClick * multiplyValue;
+	}
+
+	public void SaveData()
+	{
+		YandexGame.savesData.MoneyPerClick = CoinsForClick;
+	}
+
+	public void LoadData()
+	{
+		CoinsForClick = YandexGame.savesData.MoneyPerClick;
 	}
 }

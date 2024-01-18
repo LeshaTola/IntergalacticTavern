@@ -13,6 +13,10 @@ public class OrderManager : MonoBehaviour, IUseSaves
 	[SerializeField] private Inventory inventory;
 	[SerializeField] private SaveSystem saveSystem;
 
+	[Header("SFX")]
+	[SerializeField] private AudioClip ApplySound;
+	[SerializeField] private AudioClip RejectSound;
+
 	private List<RecipeSO> ordersList;
 	private float orderTimer;
 
@@ -43,9 +47,8 @@ public class OrderManager : MonoBehaviour, IUseSaves
 			inventory.RemoveIngredient(ingredientWithCount.Ingredient, ingredientWithCount.Count);
 		}
 
-		NextOrder();
-		YandexGame.NewLeaderboardScores("BestScore", Score);
-		saveSystem.Save();
+		SoundManager.PlaySound(ApplySound, Vector3.zero, 2);
+		OrderCompletion();
 	}
 
 	public void RejectOrder()
@@ -57,7 +60,14 @@ public class OrderManager : MonoBehaviour, IUseSaves
 		}
 		OnScoreChanged?.Invoke(Score);
 
+		SoundManager.PlaySound(RejectSound, Vector3.zero, 2);
+		OrderCompletion();
+	}
+
+	private void OrderCompletion()
+	{
 		NextOrder();
+
 		YandexGame.NewLeaderboardScores("BestScore", Score);
 		saveSystem.Save();
 	}

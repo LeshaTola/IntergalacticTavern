@@ -14,6 +14,7 @@ namespace YG
 
 		// Ваши сохранения
 		public int Money;
+		public int MoneyPerClick = 1;
 		public int Score;
 
 		public List<int> IngredientCount;

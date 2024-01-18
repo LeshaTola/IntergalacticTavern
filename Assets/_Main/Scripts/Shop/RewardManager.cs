@@ -4,7 +4,7 @@ using YG;
 public enum RewardId
 {
 	X2PerClick,
-	X2CurrentMoney
+	AddMoney
 }
 
 public class RewardManager : MonoBehaviour
@@ -26,9 +26,9 @@ public class RewardManager : MonoBehaviour
 			case RewardId.X2PerClick:
 				coin.MultiplyCoinForClick(2);
 				break;
-			case RewardId.X2CurrentMoney:
-				wallet.AddMoney(wallet.Money);
-
+			case RewardId.AddMoney:
+				int addMoneyAmount = 300;
+				wallet.AddMoney(addMoneyAmount);
 				break;
 		}
 	}

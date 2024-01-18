@@ -18,7 +18,7 @@ public class ShopUI : MonoBehaviour
 
 	[SerializeField] private Button exitButton;
 	[SerializeField] private Button x2PerClickButton;
-	[SerializeField] private Button x2CurrentMoneyButton;
+	[SerializeField] private Button addMoneyButton;
 	[SerializeField] private TextMeshProUGUI moneyText;
 
 	private void Awake()
@@ -33,9 +33,9 @@ public class ShopUI : MonoBehaviour
 			YandexGame.RewVideoShow((int)RewardId.X2PerClick);
 		});
 
-		x2CurrentMoneyButton.onClick.AddListener(() =>
+		addMoneyButton.onClick.AddListener(() =>
 		{
-			YandexGame.RewVideoShow((int)RewardId.X2CurrentMoney);
+			YandexGame.RewVideoShow((int)RewardId.AddMoney);
 		});
 
 		SetupUI();

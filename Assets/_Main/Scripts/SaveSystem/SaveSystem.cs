@@ -6,6 +6,7 @@ public class SaveSystem : MonoBehaviour
 	[SerializeField] private Inventory inventory;
 	[SerializeField] private Wallet wallet;
 	[SerializeField] private OrderManager orderManager;
+	[SerializeField] private Coin coin;
 	[SerializeField] private float saveCooldown = 30f;
 
 	private float saveTimer;
@@ -35,7 +36,6 @@ public class SaveSystem : MonoBehaviour
 		{
 			saveTimer = saveCooldown;
 			Save();
-			YandexGame.FullscreenShow();
 		}
 	}
 
@@ -44,6 +44,7 @@ public class SaveSystem : MonoBehaviour
 		wallet.LoadData();
 		inventory.LoadData();
 		orderManager.LoadData();
+		coin.LoadData();
 	}
 
 	public void Save()
@@ -51,6 +52,7 @@ public class SaveSystem : MonoBehaviour
 		wallet.SaveData();
 		inventory.SaveData();
 		orderManager.SaveData();
+		coin.SaveData();
 
 		YandexGame.SaveProgress();
 	}
